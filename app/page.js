@@ -42,34 +42,23 @@ export default function Home() {
 
   return (
     <div className={styles.page}>
-      <header style={{ textAlign: "center", marginBottom: "32px" }}>
-        <h1 style={{ fontSize: "32px", fontWeight: 700, color: "#ef5350" }}>
+      <header className={styles.header}>
+        <h1 className={styles.title}>
           Pokédex
         </h1>
-        <p style={{ color: "#666", marginTop: "4px" }}>
+        <p className={styles.subtitle}>
           Click on a Pokémon to see its details.
         </p>
       </header>
 
       {loading && (
-        <p style={{ textAlign: "center", padding: "40px" }}>Loading Pokémon…</p>
+        <p className={styles.loadingText}>Loading Pokémon…</p>
       )}
 
       {error && (
-        <div
-          style={{
-            backgroundColor: "#fdecea",
-            border: "1px solid #f5c6cb",
-            color: "#b71c1c",
-            padding: "16px",
-            borderRadius: "8px",
-            textAlign: "center",
-            maxWidth: "480px",
-            margin: "0 auto",
-          }}
-        >
+        <div className={styles.errorBox}>
           <strong>Oops! We couldn&apos;t load the Pokémon.</strong>
-          <p style={{ marginTop: "4px", fontSize: "14px" }}>{error}</p>
+          <p className={styles.errorText}>{error}</p>
         </div>
       )}
 

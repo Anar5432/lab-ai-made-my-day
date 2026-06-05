@@ -9,7 +9,7 @@ export default function PokemonCard({ pokemon, onSelect }) {
   return (
     <div className={styles.card} onClick={() => onSelect(pokemon)}>
       <img className={styles.image} src={image} alt={pokemon.name} />
-      <p className={styles.id}>#{id}</p>
+      <p className={styles.id}>#{String(id).padStart(3, "0")}</p>
       <p className={styles.name}>{pokemon.name}</p>
     </div>
   );
